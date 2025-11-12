@@ -41,18 +41,22 @@ public class about extends javax.swing.JFrame {
         
          this.getContentPane().setBackground(new Color(0,0,0,0));
         
+       //about 
+ 
         String instructions =
-                
-        "          The Adventure of Shrek and Donkey is an interactive quiz game\n" +
+        "                                                                    \n" +
+        "       The Adventure of Shrek and Donkey is an interactive quiz game\n" +
         "  that combines general knowledge and riddle-based questions with a\n" +
-        "  fun and engaging storyline. Designed for players of all ages, the game\n" +
-        "  aims to both entertain and educate by challenging the player’s\n" + 
-        "  memory, logic, and critical thinking skills.\n\n\n" + 
-        "                                                 Authors:\n\n" + 
-        "                                            Bea G. Fajardo\n " + 
-        "                                   Hanilhet R. Pagdanganan\n" + 
-        "                                     Martin Jeco B. Regalado\n" +
-        "                                        Erika Nicole L. Siron";
+        "  \t          fun and engaging storyline.\n"
+        + "\n   Designed for players of all ages, the game" +
+        "  aims to both entertain         and educate by challenging the player’s" + 
+        "  memory, logic, and critical \t\t  thinking skills.\n\n\n" + 
+        "                                              Authors:\n\n" + 
+        "                                         Bea G. Fajardo\n " + 
+        "                                Hanilhet R. Pagdanganan\n" + 
+        "                                  Martin Jeco B. Regalado\n" +
+        "                                     Erika Nicole L. Siron" +
+        "                                                                    \n";
           
         
         abtBdy.setText(instructions);

@@ -16,23 +16,27 @@ public class FinalRound extends javax.swing.JFrame {
     public FinalRound(DungeonLVL dungeonPage) {
         initComponents();
         this.dungeonPage = dungeonPage;
+        
         setupWindow();
     }
 
     private void setupWindow() {
-        // Change Icon
+        
+        
+        AudioManager.stopBackground();
+     if (AudioManager.isBackgroundStopped() && !AudioManager.isMuted()) {
+        AudioManager.playBackground("src/AUDIO/dragon.wav");
+    }
+        
+        AudioManager.addSelectSound(SAVEF);
+       // Change Icon
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/GameIcon.png"));
         this.setIconImage(icon.getImage());
         this.setResizable(false);
         this.setSize(1034, 678);
         this.setLocationRelativeTo(null); // center window
-
-        if (AudioManager.isBackgroundStopped() && !AudioManager.isMuted()) {
-
-        }
-        AudioManager.playEffect("src/AUDIO/dragon.wav");
         
-        AudioManager.addSelectSound(SAVEF);
+        
     }
 
     
@@ -67,7 +71,10 @@ public class FinalRound extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SAVEFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SAVEFActionPerformed
-      this.dispose();
+      AudioManager.stopBackground();
+      AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
+
+        this.dispose();
 
     int finalQuestionIndex;
     QuestionPage finalQuestion;

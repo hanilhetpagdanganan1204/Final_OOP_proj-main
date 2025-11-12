@@ -45,17 +45,20 @@ public class story extends javax.swing.JFrame {
 
       // story
      String storyContent = 
+     "                                                                                                          \n"+
       "                                                  Once upon a time \n\n"
-    + "     In the land of Far Far Away, Princess Fiona has been captured by a fearsome "
+    + "          In the land of Far Far Away, Princess Fiona has been captured by          a fearsome "
     + "  dragon and locked inside a dark and dangerous dungeon. The brave but grumpy ogre Shrek,"
-    + "    together with his loyal and very talkative friend Donkey, sets out on a daring rescue mission."
+    + "  together with his loyal and very talkative friend Donkey, sets out on a daring rescue mission."
     + " To reach Fiona, they must pass through ten magical doors, each one sealed with a mysterious "
-    + "    riddle. Only those who answer correctly can open the next door and move deeper into the dungeon."
-    + " Along their journey, Donkey notices a strange shortcut path. It looks dangerous,"
+    + "riddle.  Only those who answer correctly can open the next door and move deeper into the       dungeon."
+    + " Along their journey, Donkey notices a strange shortcut path.                        It looks dangerous,"
     + " but it might lead them to Fiona faster.\n\n"
     + "   Now, it’s up to you to help Shrek and Donkey solve every riddle, choose               the right path,"
     + " and rescue Princess Fiona before it’s too late!"
-    + "                                                Press Start Game to begin your adventure!";
+    + "                                                Press Start Game to begin your adventure!"
+    + "                                                                                                          \n" ;
+
       
        gameStory.setText(storyContent);
         gameStory.setLineWrap(true);

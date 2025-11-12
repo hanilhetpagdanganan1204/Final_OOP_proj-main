@@ -52,8 +52,9 @@ public QuestionPage(DungeonLVL dungeonPage, int levelNumber) {
 
     showQuestion();
     
-    AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
-    AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
+   if (!AudioManager.isMuted()) {
+        AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
+    }
     AudioManager.addSelectSound(choiceA);
     AudioManager.addSelectSound(choiceB);
     AudioManager.addSelectSound(choiceC);
@@ -77,6 +78,15 @@ public QuestionPage(DungeonLVL dungeonPage, int levelNumber) {
 
         this.currentQuestion = finalQuestionIndex; // final question index
         showQuestion();
+        
+         if (!AudioManager.isMuted()) {
+        AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
+        
+        AudioManager.addSelectSound(choiceA);
+        AudioManager.addSelectSound(choiceB);
+        AudioManager.addSelectSound(choiceC);
+        AudioManager.addSelectSound(choiceD);
+    }
     }
 
     // 🔹 Para piliin kung normal o hard mode at i-setup ang data
@@ -246,7 +256,7 @@ public QuestionPage(DungeonLVL dungeonPage, int levelNumber) {
 
    
     private void choiceAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceAActionPerformed
-            checkAnswer("A");
+        checkAnswer("A");
 
     }//GEN-LAST:event_choiceAActionPerformed
 

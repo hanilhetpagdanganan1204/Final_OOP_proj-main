@@ -5,15 +5,14 @@ import javax.swing.ImageIcon;
 
 
 public class End extends javax.swing.JFrame {
-
-   
+ 
     public End() {
-    initComponents();
+         initComponents();
     
-     if (AudioManager.isBackgroundStopped() && !AudioManager.isMuted()) {
+     AudioManager.stopBackground(); // will stop the sound
+    if (!AudioManager.isMuted()) {
         AudioManager.playBackground("src/AUDIO/WIN.wav");
     }
-
     AudioManager.addSelectSound(BACKTOMENU);
     AudioManager.addSelectSound(playAgain);
     
@@ -81,7 +80,8 @@ public class End extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BACKTOMENUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACKTOMENUActionPerformed
-     AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
+        AudioManager.stopBackground();
+        AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
  
      open BackMenu = new open();
      BackMenu.setVisible(true);
@@ -89,7 +89,7 @@ public class End extends javax.swing.JFrame {
     }//GEN-LAST:event_BACKTOMENUActionPerformed
 
     private void playAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playAgainActionPerformed
-    
+    AudioManager.stopBackground();
     AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
 
     DungeonLVL dungeonPage = new DungeonLVL();
