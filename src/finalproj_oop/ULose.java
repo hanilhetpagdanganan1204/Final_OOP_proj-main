@@ -10,11 +10,13 @@ public class ULose extends javax.swing.JFrame {
         initComponents();
         
             
-    if (AudioManager.isBackgroundStopped() && !AudioManager.isMuted()) {
+    AudioManager.stopBackground(); // will stop the sound
+    if (!AudioManager.isMuted()) {
         AudioManager.playBackground("src/AUDIO/Ulose.wav");
-        }
-         AudioManager.addSelectSound(menu);
-         AudioManager.addSelectSound(again);
+    }
+    
+    AudioManager.addSelectSound(menu);
+    AudioManager.addSelectSound(again);
 
 
         
@@ -81,15 +83,19 @@ public class ULose extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void againActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_againActionPerformed
-       AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
+    AudioManager.stopBackground();
+    AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
 
-    story storyPage = new story();
-    storyPage.setVisible(true);
+    DungeonLVL dungeonPage = new DungeonLVL();
+    // Reset to level 1 only
+    dungeonPage.resetToLevelOne();
+    dungeonPage.setVisible(true);
     this.dispose(); 
     }//GEN-LAST:event_againActionPerformed
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-       AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
+     AudioManager.stopBackground();
+     AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
  
      open BackMenu = new open();
      BackMenu.setVisible(true);

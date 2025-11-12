@@ -11,9 +11,7 @@ public class Options extends javax.swing.JFrame {
 
     public Options() {
         initComponents();
-        
-       
-        
+                 
      // changeIcon
     ImageIcon icon = new ImageIcon(getClass().getResource("/images/GameIcon.png"));
     this.setIconImage(icon.getImage());
@@ -21,6 +19,8 @@ public class Options extends javax.swing.JFrame {
     this.setSize(973,678);
     this.setLocationRelativeTo(null); // center window
     
+    
+    // bgm and click sound 
     if (!AudioManager.isMuted()) {
         AudioManager.playBackground("src/AUDIO/WHILEPLAYING.wav");
     }
@@ -93,6 +93,7 @@ public class Options extends javax.swing.JFrame {
 
 private void soundStat(){
     
+    // show on and off text and color
     if (AudioManager.isEffectsMuted()) {
         // Sound OFF
         souON.setVisible(false);
@@ -244,7 +245,7 @@ private void soundStat(){
     }//GEN-LAST:event_HOMEActionPerformed
 
     private void ONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ONActionPerformed
-        AudioManager.playEffect("src/AUDIO/select.wav");
+        AudioManager.playEffect("src/AUDIO/select.wav"); // will play once clicked
         AudioManager.setMuted(true);
         ON.setVisible(false);
         OFFBU.setVisible(true);
@@ -252,7 +253,7 @@ private void soundStat(){
     }//GEN-LAST:event_ONActionPerformed
 
     private void OFFBUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OFFBUActionPerformed
-        AudioManager.playEffect("src/AUDIO/correct.wav");
+        AudioManager.playEffect("src/AUDIO/correct.wav"); // will play once clicked
         AudioManager.setMuted(false);
         OFFBU.setVisible(false);
         ON.setVisible(true); 
@@ -262,7 +263,7 @@ private void soundStat(){
 
     private void souONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_souONActionPerformed
         // TODO add your handling code here:
-       AudioManager.playEffect("src/AUDIO/select.wav"); // or use click.wav if you have it
+       AudioManager.playEffect("src/AUDIO/select.wav"); // button click
     
     // Mute only sound effects after delay
     new java.util.Timer().schedule( 
